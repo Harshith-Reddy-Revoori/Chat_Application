@@ -1,0 +1,19 @@
+<!-- chat/templates/chat/index.html -->
+<h1>Enter a Chat Room</h1>
+
+<form id="room-form" action="" method="GET">
+    <input type="text" id="room-name-input" name="room_name" placeholder="Room name" required>
+    <input type="submit" value="Join">
+</form>
+
+<script>
+// Handle the form submission
+document.getElementById('room-form').onsubmit = function(event) {
+    event.preventDefault();
+    const roomName = document.getElementById('room-name-input').value;
+    
+    if (roomName.trim()) {
+        window.location.href = `/chat/${roomName}/`;  // Redirect to /chat/room_name/
+    }
+};
+</script>
